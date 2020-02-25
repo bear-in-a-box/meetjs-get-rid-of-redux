@@ -16,7 +16,7 @@ export function receiveMessage(message: MessageCDM) {
       author,
       date: new Date(message.date),
       text: message.text,
-      id: `${message.date}.${author.id}`
+      id: message.id
     };
     dispatch({ type: ACTION_TYPES.appendMessage, payload: targetMessage });
   };

@@ -1,4 +1,5 @@
 import { EventEmitter } from 'events';
+import { v4 as uuidv4 } from 'uuid';
 import { Message } from 'message.model';
 import ProfilesService from './profiles.service';
 
@@ -45,7 +46,8 @@ export class MessagingService {
     const message: Message = {
       authorId: profile.id,
       date,
-      text
+      text,
+      id: `${profile.id}.${uuidv4()}`
     };
     process.env.DEBUG === '1' &&
       console.log('Message from', profile.displayName, message);

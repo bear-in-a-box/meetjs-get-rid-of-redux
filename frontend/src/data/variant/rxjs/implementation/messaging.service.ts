@@ -24,7 +24,7 @@ export class MessagingService {
         author: profile,
         date: new Date(cdm.date),
         text: cdm.text,
-        id: `${cdm.date}.${profile.id}`
+        id: cdm.id
       }))
     );
   }
