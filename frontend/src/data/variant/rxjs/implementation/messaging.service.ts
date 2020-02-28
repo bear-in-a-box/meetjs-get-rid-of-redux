@@ -30,6 +30,7 @@ export class MessagingService {
   }
 
   onMessageReceived(message: MessageCDM): void {
+    console.log('RxJS message trigger');
     this.incomingMessages$.next(message);
   }
 }
